@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, Vibration } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme, } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useColorScheme } from 'react-native';
+import { useState } from "react";
 
 import Home from "./screens/Home";
 import Flaska from "./screens/Flaska";
@@ -24,6 +25,7 @@ const Tab = createBottomTabNavigator();
 // }
 export default function App() {
   const scheme = useColorScheme();
+
   return (
     <SafeAreaProvider>
       <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
